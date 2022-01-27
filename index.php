@@ -1,14 +1,16 @@
-<?php
+<!DOCTYPE html>
+<html lang="fr">
 
-echo "<head><link href='bootstrap.css' rel='stylesheet' type='text/css' media='all'/></head>";
+<head>
+    <title>Mes Outils - Accueil </title>
+    <link href='bootstrap.css' rel='stylesheet' type='text/css' media='all'/>
+</head>
+<body class="m-5 text-center">
+<p><b>Mes outils</b> est une plateforme web destinée aux professeurs. Ils pourront ainsi réserver un outil à la
+    fois, de façon simple et efficace.</p>
 
-echo "<nav></nav>";
-
-echo "<form method='POST' action='connexion/index.php'>
-<input type='submit' value='Connexion' class='m-2'>
-</form>";
-
-echo "<p><b>Mes outils</b> est une plateforme web destinée aux professeurs. Ils pourront ainsi réserver un outil à la 
-fois, de façon simple et efficace.</p>";
-
-?>
+<form method='POST' action='connexion/index.php'>
+    <button type='submit' class='m-2 btn btn-primary btn-lg'>C'est parti</button>
+</form>
+</body>
+</html>
