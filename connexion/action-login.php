@@ -13,7 +13,10 @@ if(isset($_POST['login'], $_POST['mdp'])) {
             $flag = true;
             session_start();
             $_SESSION['login'] = $login;
-            header('Location: ../admin.php');
+            if ($login == 'amdin')
+                header('Location: ../admin.php');
+            else
+                header('Location: ../prof.php');
         }
     }
 
