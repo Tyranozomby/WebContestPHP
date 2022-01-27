@@ -13,6 +13,7 @@ if(isset($_POST['login'], $_POST['mdp'])) {
             $flag = true;
             session_start();
             $_SESSION['login'] = $login;
+            fclose($file);
             if ($login == 'amdin')
                 header('Location: ../admin.php');
             else
@@ -20,6 +21,7 @@ if(isset($_POST['login'], $_POST['mdp'])) {
         }
     }
 
+    fclose($file);
     if ($flag == false) {
         header('Location: index.php?id=wrong');
     }
