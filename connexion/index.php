@@ -1,20 +1,28 @@
-<!--Connexion prof/admin + création compte + captcha-->
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <link href='bootstrap.css' rel='stylesheet' type='text/css' media='all'/>
+    <link href='../bootstrap.css' rel='stylesheet' type='text/css' media='all'/>
+    <title>Mes Outils - Connexion</title>
 </head>
-
-<h1>Connexion</h1>
+<body class="ms-5 mt-4">
+<h1 class="mb-4">Connexion</h1>
 
 <form method='post' action='action-login.php'>
-    <label for='login' class='form-label mt-4'>Identifiant</label>
-    <input type='text' class='form-control' id='login' placeholder='Login' name='login'>
-    <br><br>
-    <label for='mdp'>Mot de passe</label>
-    <input type='password' class='form-control' id='mdp' placeholder='Mot de passe' name='mdp'>
-    <br><br>
-    <input class='btn btn-primary' type='submit' value='Connexion'>
+    <div class="flex-wrap justify-content-center">
+        <div class="form-floating">
+            <input type='text' class='form-control w-25' id='login' placeholder=' ' name='login'>
+            <label for='login'>Identifiant</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input type='password' class='form-control w-25' id='mdp' placeholder=' ' name='mdp'>
+            <label for='mdp'>Mot de passe</label>
+        </div>
+        <button class='btn btn-primary btn-lg mt-4' type='submit'>Connexion</button>
+    </div>
 </form>
 
-<br><br><p>Première connexion ? <a href='inscription.php'>Incrivez-vous</a></p>
+<br>
+<p>Première fois ? <a href='inscription.php'>Inscrivez-vous</a></p>
 
+</body>
+</html>
