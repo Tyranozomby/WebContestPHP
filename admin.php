@@ -7,13 +7,13 @@
     <?php
         session_start();
         if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "admin")){
-            //header('Location: connexion/index.php');
+            header('Location: connexion/index.php');
         }
     ?>
     <body>
         <header>
             <a href="connexion/logout.php">
-                <input type="button" value="Deconnexion">
+                <input type="button"  class="btn btn-secondary" value="Deconnexion">
             </a>
         </header>
         <main>
@@ -37,12 +37,12 @@
                 ?>
             </table>
             <a href='actionAdmin.php?createPDF'>
-                <input type="button" value="Télécharger">
+                <input type="button" class="btn btn-secondary" value="Télécharger">
             </a>
             <div>
                 <div>Ajouter un élément :</div>
                 <form action="actionAdmin.php" method="POST">
-                    <table>
+                    <table style="border: 1px solid black;">
                         <tr>
                             <td><label for="ident">Identifiant</label></td>
                             <td><label for="descr">Descriptif</label></td>
