@@ -3,7 +3,7 @@
 
     session_start();
     if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "admin")){
-        //header('Location: admin.php');
+        header('Location: admin.php');
     }
     if(isset($_POST["ajout"])){
         foreach($_POST as $k => $v) $$k = htmlspecialchars($v);
@@ -63,5 +63,4 @@
 
         $pdf->Output("D","Donnee_du_".date("d.m.y-g.i").".pdf");
     }
-    //header('Location: admin.php');
 ?>
