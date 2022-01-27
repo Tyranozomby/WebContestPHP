@@ -43,6 +43,8 @@ if (isset($_GET['id'])) {
         </div>
         <br>
         <button type="submit" name="Inscription" class="btn btn-primary btn-lg">Inscription</button>
+        <button type="button" onclick="location.href = './'" class="btn btn-secondary m-3">Retour
+        </button>
     </form>
 </div>
 </body>
