@@ -1,65 +1,49 @@
-
 <html lang='fr'>
 <head>
     <meta charset='UTF-8'>
     <title>Mes outils - inscription</title>
+    <link rel="stylesheet" href="../bootstrap.css">
 </head>
 <body>
 
-<h1>Inscription professeur</h1>
 
 <?php
-    if(isset($_GET['id'])){
-        switch  ($_GET['id']){
-            case '1':
-                echo"<p style='color: red;'>Mot de passe incorrect</p>";
-                break;
-            case '2':
-                echo"<p style='color: red;'>Login déjà existant</p>";
-                break;
-            case '3':
-                echo"<p style='color: red;'>Captcha incorrect</p>";
-                break;
-        }
+if (isset($_GET['id'])) {
+    switch ($_GET['id']) {
+        case '1':
+            echo "<p style='color: red;'>Mot de passe incorrect</p>";
+            break;
+        case '2':
+            echo "<p style='color: red;'>Login déjà existant</p>";
+            break;
+        case '3':
+            echo "<p style='color: red;'>Captcha incorrect</p>";
+            break;
     }
+}
 ?>
-
-<form action='action-insc.php' method='post'>
-    <table>
-        <tr>
-        <td>Identifiant</td>
-        <td><input type='text' name='login'></td>
-        <tr>
-          <td>Mot de passe</td>
-          <td><input type='password' name='mdp'></td>
-        </tr>
-        <tr>
-          <td>Confirmer votre mot de passe</td>
-          <td><input type='password' name='mdpConfirm'></td>
-        </tr>
-
-        <tr>
-            <td>
-<!--        <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
-<!--        <div class="g-recaptcha" data-sitekey="6LfQ4T4eAAAAAJcnH3h8L7ruen23i-T4jHuIZkEF"></div>-->
-<!--        <button class="g-recaptcha" data-sitekey="6LfQ4T4eAAAAAJPodQ0tmgGKRf778KcM-lh3cJrx" data-callback='onReCaptchaValid'>Inscription</button>-->
-<!---->
-<!--        <script type="text/javascript">-->
-<!--        function onReCaptchaValid(token) {-->
-<!--            document.getElementById('id_du_formulaire').submit();-->
-<!--        }-->
-<!--        </script>-->
-                <label>5 + 2</label>
-            </td>
-            <td>
-                <input type="text" name="rep">
-            </td>
-        </tr>
-
-    </table>
-    <br>
-    <input type="submit" value="Inscription">
-</form>
-
+<div class="m-5">
+    <h1 class="mb-4">Inscription professeur</h1>
+    <form action='action-insc.php' method='post'>
+        <div class="form-floating w-25 mt-2">
+            <input type='text' id="login" name='login' class="form-control" placeholder=" ">
+            <label for="login">Identifiant</label>
+        </div>
+        <div class="form-floating w-25 mt-2">
+            <input type='password' id="mdp" name='mdp' class="form-control" placeholder=" ">
+            <label for="mdp">Mot de passe</label>
+        </div>
+        <div class="form-floating w-25 mt-2">
+            <input type='password' id="mdpConfirm" name='mdpConfirm' class="form-control" placeholder=" ">
+            <label for="login">Confirmer le mot de passe</label>
+        </div>
+        <div class="form-floating w-25 mt-2">
+            <input type='number' id="rep" name='rep' class="form-control" placeholder=" ">
+            <label for="login">Captcha (5 + 2)</label>
+        </div>
+        <br>
+        <button type="submit" name="Inscription" class="btn btn-primary btn-lg">Inscription</button>
+    </form>
+</div>
 </body>
 </html>

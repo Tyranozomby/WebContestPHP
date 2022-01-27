@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['login'],$_POST['mdp'],$_POST['mdpConfirm'])){
+if (isset($_POST['login'], $_POST['mdp'], $_POST['mdpConfirm'])) {
 
 //    if (isset ($_POST['g-recaptcha-response']) &&! empty ($_POST ['g-recaptcha-response'])) {
 //        $secret = '6LfQ4T4eAAAAAJPodQ0tmgGKRf778KcM-lh3cJrx';
@@ -16,17 +16,17 @@ if(isset($_POST['login'],$_POST['mdp'],$_POST['mdpConfirm'])){
     $mdpConfirm = $_POST['mdpConfirm'];
     $rep = $_POST['rep'];
 
-    echo $login, $mdp, $mdpConfirm, $rep;
+//    echo $login, $mdp, $mdpConfirm, $rep;
 
     if ($rep != 7) {
         header('Location: inscription.php?id=3');
     }
 
-    if ($mdp != $mdpConfirm){
+    if ($mdp != $mdpConfirm) {
         header('Location: inscription.php?id=1');
     }
 
-    $file = fopen("../data/users.csv","a") or die("Impossible de trouver le fichier");
+    $file = fopen("../data/users.csv", "a") or die("Impossible de trouver le fichier");
     $flag = true;
     while ($line = fgetcsv($file)) {
         if ($login == $line[0])
@@ -34,18 +34,15 @@ if(isset($_POST['login'],$_POST['mdp'],$_POST['mdpConfirm'])){
     }
     fclose($file);
 
-    if ($flag){
-      $file = fopen("../data/users.csv","a") or die("Impossible de trouver le fichier");
-      fputcsv($file,[$login,md5($mdp)]);
-      fclose($file);
-//      header('Location: inscription.php');
-    }
-
-    else
+    if ($flag) {
+        $file = fopen("../data/users.csv", "a") or die("Impossible de trouver le fichier");
+        fputcsv($file, [$login, md5($mdp)]);
+        fclose($file);
+        header('Location: inscription.php');
+    } else
         header('Location: inscription.php?id=2');
 
-}
-else
+} else
     header('Location: inscription.php?id=4');
 
 ?>
